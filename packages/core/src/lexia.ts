@@ -19,7 +19,9 @@ export interface Context {
   confidence: number
 }
 
-export type Suggestion = {}
+export interface Suggestion {
+  id?: string
+}
 
 export class Lexia {
   private readonly config: LexiaConfig
@@ -30,11 +32,11 @@ export class Lexia {
     this.openaiClient = new OpenAIClient(config.apiKey)
   }
 
-  async extractContext(diff: string): Promise<Context> {
+  extractContext(diff: string): Promise<Context> {
     return this.openaiClient.extractContext(diff)
   }
 
-  async generateSuggestions(_context: Context): Promise<Suggestion[]> {
+  generateSuggestions(_context: Context): Promise<Suggestion[]> {
     // Implementation to generate documentation update suggestions from context
     throw new Error('Not implemented')
   }
