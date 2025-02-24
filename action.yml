@@ -21,4 +21,4 @@ outputs:
 
 runs:
   using: node20
-  main: dist/index.js
+  main: packages/action/dist/index.js

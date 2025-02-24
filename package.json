@@ -1,61 +1,14 @@
 {
-  "name": "typescript-action",
-  "description": "GitHub Actions TypeScript template",
-  "version": "0.0.0",
-  "packageManager": "pnpm@10.4.1",
-  "author": "",
-  "type": "module",
+  "name": "lexia",
   "private": true,
-  "homepage": "https://github.com/actions/typescript-action",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
-  },
-  "bugs": {
-    "url": "https://github.com/actions/typescript-action/issues"
-  },
-  "keywords": [
-    "actions"
-  ],
-  "exports": {
-    ".": "./dist/index.js"
-  },
-  "engines": {
-    "node": ">=20"
-  },
+  "packageManager": "pnpm@10.4.1",
   "scripts": {
-    "bundle": "pnpm run fmt:biome && pnpm run package",
-    "ci-test": "vitest run",
-    "coverage": "pnpm make-coverage-badge --output-path ./badges/coverage.svg",
-    "fmt:biome": "biome check . --write --unsafe",
-    "lint": "pnpm run lint:biome",
-    "lint:biome": "biome check .",
-    "local-action": "pnpm @github/local-action . src/main.ts .env",
-    "package": "pnpm rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
-    "package:watch": "pnpm run package -- --watch",
-    "test": "vitest",
-    "all": "pnpm run lint && pnpm run test && pnpm run coverage && pnpm run package"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "@actions/core": "^1.11.1"
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@github/local-action": "^2.6.2",
-    "@mh4gf/configs": "^0.4.5",
-    "@rollup/plugin-commonjs": "^28.0.1",
-    "@rollup/plugin-node-resolve": "^16.0.0",
-    "@rollup/plugin-typescript": "^12.1.1",
-    "@types/node": "^22.13.5",
-    "@vitest/coverage-v8": "^3.0.6",
-    "make-coverage-badge": "^1.2.0",
-    "rollup": "^4.34.7",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.3",
-    "vitest": "^3.0.6"
-  },
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "*"
+    "@mh4gf/configs": "^0.4.5"
   }
 }
