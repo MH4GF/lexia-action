@@ -24,9 +24,12 @@ program
   .action(async (options) => {
     try {
       const result = await suggest(options)
-      console.log(result)
+      // biome-ignore lint/suspicious/noConsole: This is a CLI output
+      console.info(result)
       process.exit(0)
-    } catch (_error) {
+    } catch (error) {
+      // biome-ignore lint/suspicious/noConsole: This is a CLI output
+      console.error(error)
       process.exit(1)
     }
   })

@@ -9,6 +9,9 @@
       "correctness": {
         "noUndeclaredDependencies": "off",
         "noNodejsModules": "off"
+      },
+      "complexity": {
+        "useLiteralKeys": "off"
       }
     }
   }

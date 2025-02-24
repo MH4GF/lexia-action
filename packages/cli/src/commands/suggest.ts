@@ -57,10 +57,8 @@ function formatOutput(
 
   // Markdown format
   const formatSuggestion = (suggestion: Suggestion) => {
-    return `## ${suggestion.file}\n\n${suggestion.suggestions.join('\n\n')}\n`;
-  };
+    return `## ${suggestion.file}\n\n${suggestion.suggestions.join('\n\n')}\n`
+  }
 
-  return suggestions
-    .map(formatSuggestion)
-    .join('\n')
+  return suggestions.map(formatSuggestion).join('\n')
 }
