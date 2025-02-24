@@ -1,12 +1,12 @@
 /**
  * Unit tests for src/wait.ts
  */
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { wait } from '../src/wait.js'
 
 describe('wait.ts', () => {
   it('Throws an invalid number', async () => {
-    const input = parseInt('foo', 10)
+    const input = Number.parseInt('foo', 10)
     await expect(wait(input)).rejects.toThrow('milliseconds is not a number')
   })
 

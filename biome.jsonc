@@ -3,5 +3,12 @@
   "extends": ["./node_modules/@mh4gf/configs/biome/index.jsonc"],
   "files": {
     "ignore": ["dist/**/*"]
+  },
+  "linter": {
+    "rules": {
+      "correctness": {
+        "noUndeclaredDependencies": "off"
+      }
+    }
   }
 }

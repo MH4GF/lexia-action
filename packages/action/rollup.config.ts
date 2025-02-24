@@ -5,14 +5,13 @@ import nodeResolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 
 const config = {
-  input: 'src/index.ts',
+  input: 'src/main.ts',
   output: {
-    esModule: true,
     file: 'dist/index.js',
-    format: 'es',
-    sourcemap: true
+    format: 'esm',
   },
-  plugins: [typescript(), nodeResolve({ preferBuiltins: true }), commonjs()]
+  plugins: [nodeResolve(), commonjs(), typescript()],
 }
 
+// biome-ignore lint/style/noDefaultExport: This is required by rollup
 export default config
