@@ -2,6 +2,7 @@
 
 import { program } from 'commander'
 import pkg from '../package.json' with { type: 'json' }
+import { suggest } from './commands/suggest.ts'
 
 program
   .name('lexia')
@@ -20,8 +21,14 @@ program
   .description('Generate documentation update suggestions')
   .option('-c, --config <path>', 'Path to config file')
   .option('-f, --format <type>', 'Output format (markdown/json)')
-  .action(async (_options) => {
-    // TODO: Implementation pending
+  .action(async (options) => {
+    try {
+      const result = await suggest(options)
+      console.log(result)
+      process.exit(0)
+    } catch (_error) {
+      process.exit(1)
+    }
   })
 
 program

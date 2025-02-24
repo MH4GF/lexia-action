@@ -7,6 +7,13 @@
 - [x] Set up Vitest configuration
 - [x] Add initial test for Lexia class
 
+### Build Configuration
+
+- [x] Set up build configuration for @lexia/core
+  - [x] Configure TypeScript build settings
+  - [x] Add build script
+  - [x] Update package.json exports
+
 ### OpenAI Integration
 
 - [x] Set up OpenAI client
@@ -81,34 +88,34 @@
 
 ### Command Implementation
 
-- [ ] Implement `init` command
-  - [ ] Generate default config file
-  - [ ] Add config file template
-  - [ ] Add tests for init command
-- [ ] Implement `suggest` command
-  - [ ] Read git diff
+- [x] Implement `suggest` command
+  - [x] Read git diff
   - [ ] Load configuration
-  - [ ] Call @lexia/core
-  - [ ] Format output
-  - [ ] Add tests for suggest command
+  - [x] Call @lexia/core
+  - [x] Format output
+  - [x] Add tests for suggest command
 - [ ] Implement `config` command
   - [ ] Add get/set/list subcommands
   - [ ] Add config file validation
   - [ ] Add tests for config command
+- [ ] Implement `init` command
+  - [ ] Generate default config file
+  - [ ] Add config file template
+  - [ ] Add tests for init command
 
 ### Environment Variables
 
-- [ ] Add environment variables handling
-  - [ ] OPENAI_API_KEY validation
+- [x] Add environment variables handling
+  - [x] OPENAI_API_KEY validation
   - [ ] LEXIA_CONFIG_PATH handling
   - [ ] Add tests for env vars
 
 ### Error Handling
 
-- [ ] Add proper error messages
-- [ ] Add error handling for missing API key
+- [x] Add proper error messages
+- [x] Add error handling for missing API key
 - [ ] Add error handling for invalid config
-- [ ] Add error handling for git commands
+- [x] Add error handling for git commands
 - [ ] Add tests for error cases
 
 ## Phase 2: Advanced Features

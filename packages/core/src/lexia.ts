@@ -21,6 +21,8 @@ export interface Context {
 
 export interface Suggestion {
   id?: string
+  file: string
+  suggestions: string[]
 }
 
 export class Lexia {
