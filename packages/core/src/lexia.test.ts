@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest'
-import { type Context, Lexia, type LexiaConfig } from './lexia.js'
-import { OpenAIClient } from './openai/client.js'
+import { type Context, Lexia, type LexiaConfig } from './lexia.ts'
+import { OpenAIClient } from './openai/client.ts'
 
-vi.mock('./openai/client.js')
+vi.mock('./openai/client.ts')
 
 describe('Lexia', () => {
   const config: LexiaConfig = {

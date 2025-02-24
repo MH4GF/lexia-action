@@ -1,4 +1,4 @@
-import { OpenAIClient } from './openai/client.js'
+import { OpenAIClient } from './openai/client.ts'
 
 export interface LexiaConfig {
   apiKey: string

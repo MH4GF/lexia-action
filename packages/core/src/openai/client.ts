@@ -1,5 +1,5 @@
 import OpenAI from 'openai'
-import type { Context } from '../lexia.js'
+import type { Context } from '../lexia.ts'
 
 interface ExtractionConfig {
   confidence?: number
