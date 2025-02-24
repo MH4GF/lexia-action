@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 import { program } from 'commander'
-import { version } from '../package.json'
+import pkg from '../package.json' with { type: 'json' }
 
 program
   .name('lexia')
   .description('Generate documentation update suggestions based on git changes')
-  .version(version)
+  .version(pkg.version)
 
 program
   .command('init')

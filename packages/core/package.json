@@ -1,6 +1,7 @@
 {
   "name": "@lexia/core",
   "version": "0.1.0",
+  "type": "module",
   "description": "Core functionality package for Lexia Action",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
