@@ -25,16 +25,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        id: setup-node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: .node-version
-          cache: npm
-
-      - name: Install Dependencies
-        id: install
-        run: npm ci
+      - name: Setup pnpm
+        uses: MH4GF/shared-config/.github/composite-actions/setup-pnpm@main
 
       - name: Lint Codebase
         id: super-linter
