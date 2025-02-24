@@ -1,3 +1,5 @@
+import { OpenAIClient } from './openai/client.ts'
+
 export interface LexiaConfig {
   apiKey: string
   docs: string[]
@@ -11,20 +13,25 @@ export interface LexiaConfig {
   }
 }
 
-export type Context = {}
+export interface Context {
+  changes: string[]
+  knowledge: string[]
+  confidence: number
+}
 
 export type Suggestion = {}
 
 export class Lexia {
   private readonly config: LexiaConfig
+  private readonly openaiClient: OpenAIClient
 
   constructor(config: LexiaConfig) {
     this.config = config
+    this.openaiClient = new OpenAIClient(config.apiKey)
   }
 
-  async extractContext(_diff: string): Promise<Context> {
-    // Implementation to extract context from PR diff
-    throw new Error('Not implemented')
+  async extractContext(diff: string): Promise<Context> {
+    return this.openaiClient.extractContext(diff)
   }
 
   async generateSuggestions(_context: Context): Promise<Suggestion[]> {

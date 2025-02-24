@@ -9,12 +9,12 @@
 
 ### OpenAI Integration
 
-- [ ] Set up OpenAI client
-- [ ] Add environment variables handling
-- [ ] Create basic prompt templates
-- [ ] Add error handling for API calls
+- [x] Set up OpenAI client
+- [x] Add environment variables handling
+- [x] Create basic prompt templates
+- [x] Add error handling for API calls
 - [ ] Add retry logic
-- [ ] Add tests for OpenAI integration
+- [x] Add tests for OpenAI integration
 
 ### Vercel AI SDK Integration
 
