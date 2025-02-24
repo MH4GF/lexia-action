@@ -2,6 +2,7 @@
   "name": "typescript-action",
   "description": "GitHub Actions TypeScript template",
   "version": "0.0.0",
+  "packageManager": "pnpm@10.4.1",
   "author": "",
   "type": "module",
   "private": true,
@@ -23,17 +24,17 @@
     "node": ">=20"
   },
   "scripts": {
-    "bundle": "npm run format:write && npm run package",
-    "ci-test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 npx jest",
-    "coverage": "npx make-coverage-badge --output-path ./badges/coverage.svg",
+    "bundle": "pnpm run format:write && pnpm run package",
+    "ci-test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 pnpm jest",
+    "coverage": "pnpm make-coverage-badge --output-path ./badges/coverage.svg",
     "fmt:biome": "biome check . --write --unsafe",
-    "lint": "npx eslint .",
+    "lint": "pnpm eslint .",
     "lint:biome": "biome check .",
-    "local-action": "npx @github/local-action . src/main.ts .env",
-    "package": "npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
-    "package:watch": "npm run package -- --watch",
-    "test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 npx jest",
-    "all": "npm run fmt:biome && npm run lint && npm run test && npm run coverage && npm run package"
+    "local-action": "pnpm @github/local-action . src/main.ts .env",
+    "package": "pnpm rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "package:watch": "pnpm run package -- --watch",
+    "test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 pnpm jest",
+    "all": "pnpm run fmt:biome && pnpm run lint && pnpm run test && pnpm run coverage && pnpm run package"
   },
   "license": "MIT",
   "dependencies": {
