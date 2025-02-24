@@ -22,7 +22,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "bundle": "pnpm run fmt:biome && pnpm run package",
+    "bundle": "pnpm run package",
     "ci-test": "vitest run",
     "coverage": "pnpm make-coverage-badge --output-path ./badges/coverage.svg",
     "lint": "pnpm run lint:biome",
