@@ -29,16 +29,8 @@ jobs:
         id: checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        id: setup-node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: .node-version
-          cache: npm
-
-      - name: Install Dependencies
-        id: npm-ci
-        run: npm ci
+      - name: Setup pnpm
+        uses: MH4GF/shared-config/.github/composite-actions/setup-pnpm@main
 
       - name: Setup Ruby
         id: setup-ruby
