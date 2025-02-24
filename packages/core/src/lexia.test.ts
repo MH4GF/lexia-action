@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest'
-import { type Context, Lexia, type LexiaConfig } from './lexia.ts'
-import { OpenAIClient } from './openai/client.ts'
+import { type Context, Lexia, type LexiaConfig } from './lexia.js'
+import { OpenAIClient } from './openai/client.js'
 
-vi.mock('./openai/client.ts')
+vi.mock('./openai/client.js')
 
 describe('Lexia', () => {
   const config: LexiaConfig = {
@@ -36,19 +36,19 @@ describe('Lexia', () => {
       const result = await lexia.extractContext('test diff')
 
       expect(result).toEqual(mockContext)
-      expect(mockExtractContext).toHaveBeenCalledWith('test diff')
+      expect(mockExtractContext).toHaveBeenCalledWith('test diff', {})
     })
   })
 
   describe('generateSuggestions', () => {
-    it('should throw not implemented error', async () => {
+    it('should throw not implemented error', () => {
       const mockContext: Context = {
         changes: ['Test change'],
         knowledge: ['Test knowledge'],
         confidence: 0.8,
       }
       const lexia = new Lexia(config)
-      await expect(lexia.generateSuggestions(mockContext)).rejects.toThrow('Not implemented')
+      expect(() => lexia.generateSuggestions(mockContext)).toThrow('Not implemented')
     })
   })
 })

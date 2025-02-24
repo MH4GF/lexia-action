@@ -3,13 +3,20 @@
   "version": "0.1.0",
   "type": "module",
   "description": "Core functionality package for Lexia Action",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
   "files": ["dist"],
   "scripts": {
     "build": "tsc",
-    "test": "vitest",
-    "clean": "rimraf dist"
+    "dev": "tsc --watch",
+    "test": "vitest"
   },
   "dependencies": {
     "ai": "^4.1.45",
@@ -17,7 +24,6 @@
   },
   "devDependencies": {
     "@types/node": "^22.13.5",
-    "rimraf": "^6.0.1",
     "typescript": "^5.7.3",
     "vitest": "^3.0.6",
     "@mh4gf/configs": "^0.4.5"

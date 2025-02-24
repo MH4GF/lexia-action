@@ -1,5 +1,10 @@
 import OpenAI from 'openai'
-import type { Context } from '../lexia.ts'
+import type { Context } from '../lexia.js'
+
+interface ExtractionConfig {
+  confidence?: number
+  maxResults?: number
+}
 
 export class OpenAIClient {
   private client: OpenAI
@@ -8,15 +13,17 @@ export class OpenAIClient {
     this.client = new OpenAI({ apiKey })
   }
 
-  async extractContext(diff: string): Promise<Context> {
+  async extractContext(diff: string, config: ExtractionConfig = {}): Promise<Context> {
     try {
       const completion = await this.client.chat.completions.create({
         model: 'gpt-4o-mini',
         messages: [
           {
             role: 'system',
-            content:
-              'You are an AI that analyzes pull request diffs and extracts meaningful context and knowledge. Respond in JSON format.',
+            content: `You are an AI that analyzes pull request diffs and extracts meaningful context and knowledge.
+               Confidence threshold: ${config.confidence || 0.8}
+               Max results: ${config.maxResults || 5}
+               Respond in JSON format.`,
           },
           {
             role: 'user',

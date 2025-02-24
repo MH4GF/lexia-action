@@ -1,4 +1,4 @@
-import { OpenAIClient } from './openai/client.ts'
+import { OpenAIClient } from './openai/client.js'
 
 export interface LexiaConfig {
   apiKey: string
@@ -33,11 +33,11 @@ export class Lexia {
   }
 
   extractContext(diff: string): Promise<Context> {
-    return this.openaiClient.extractContext(diff)
+    const extractionConfig = this.config.extractionConfig || {}
+    return this.openaiClient.extractContext(diff, extractionConfig)
   }
 
   generateSuggestions(_context: Context): Promise<Suggestion[]> {
-    // Implementation to generate documentation update suggestions from context
     throw new Error('Not implemented')
   }
 }
