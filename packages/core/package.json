@@ -16,7 +16,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "dependencies": {
     "ai": "^4.1.45",
