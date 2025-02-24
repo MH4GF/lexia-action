@@ -14,9 +14,7 @@
   "bugs": {
     "url": "https://github.com/actions/typescript-action/issues"
   },
-  "keywords": [
-    "actions"
-  ],
+  "keywords": ["actions"],
   "exports": {
     ".": "./dist/index.js"
   },
@@ -27,7 +25,6 @@
     "bundle": "pnpm run fmt:biome && pnpm run package",
     "ci-test": "vitest run",
     "coverage": "pnpm make-coverage-badge --output-path ./badges/coverage.svg",
-    "fmt:biome": "biome check . --write --unsafe",
     "lint": "pnpm run lint:biome",
     "lint:biome": "biome check .",
     "local-action": "pnpm @github/local-action . src/main.ts .env",
@@ -41,9 +38,7 @@
     "@actions/core": "^1.11.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
     "@github/local-action": "^2.6.2",
-    "@mh4gf/configs": "^0.4.5",
     "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-typescript": "^12.1.1",

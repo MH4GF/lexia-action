@@ -21,15 +21,9 @@ importers:
         specifier: ^1.11.1
         version: 1.11.1
     devDependencies:
-      '@biomejs/biome':
-        specifier: 1.9.4
-        version: 1.9.4
       '@github/local-action':
         specifier: ^2.6.2
         version: 2.6.3
-      '@mh4gf/configs':
-        specifier: ^0.4.5
-        version: 0.4.5(@tsconfig/strictest@2.0.5)
       '@rollup/plugin-commonjs':
         specifier: ^28.0.1
         version: 28.0.2(rollup@4.34.8)
