@@ -12,6 +12,9 @@
       },
       "complexity": {
         "useLiteralKeys": "off"
+      },
+      "suspicious": {
+        "noConsole": "off"
       }
     }
   }
