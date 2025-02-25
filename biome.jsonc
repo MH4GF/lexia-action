@@ -7,7 +7,14 @@
   "linter": {
     "rules": {
       "correctness": {
-        "noUndeclaredDependencies": "off"
+        "noUndeclaredDependencies": "off",
+        "noNodejsModules": "off"
+      },
+      "complexity": {
+        "useLiteralKeys": "off"
+      },
+      "suspicious": {
+        "noConsole": "off"
       }
     }
   }
