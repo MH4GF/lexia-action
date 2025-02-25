@@ -45,6 +45,7 @@ Options:
 
 - `--config <path>` - Use custom config file path
 - `--format <type>` - Output format (markdown/json)
+- `--debug` - Enable debug mode
 
 ### `lexia config`
 
@@ -86,6 +87,7 @@ suggestion:
 
 - `OPENAI_API_KEY` - Your OpenAI API key (required)
 - `LEXIA_CONFIG_PATH` - Custom path to config file (optional)
+- `LEXIA_DEBUG` - Enable debug mode (optional)
 
 ## License
 

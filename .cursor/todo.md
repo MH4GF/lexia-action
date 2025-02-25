@@ -29,6 +29,17 @@
 - [ ] Set up streaming response handling
 - [ ] Add proper error handling
 - [ ] Add tests for AI SDK integration
+- [ ] Implement debug mode
+  - [x] Add basic debug logging for API calls
+  - [ ] Add detailed request/response logging
+  - [ ] Add performance metrics logging
+  - [ ] Add token usage tracking
+  - [ ] Add debug configuration options
+    - [ ] Log levels (error, warn, info, debug, trace)
+    - [ ] Output formats (console, file, custom)
+    - [ ] Filtering options
+  - [ ] Add debug mode documentation
+  - [ ] Add tests for debug mode
 
 ## Phase 2: Core Implementation
 
@@ -66,6 +77,11 @@
 - [ ] Add default values for optional config
 - [ ] Add configuration validation
 - [ ] Add tests for configuration handling
+- [ ] Add debug configuration
+  - [ ] Debug mode settings in config file
+  - [ ] Environment variable support (LEXIA_DEBUG)
+  - [ ] Log file path configuration
+  - [ ] Log rotation settings
 
 ### Documentation
 
@@ -156,3 +172,8 @@
 - [ ] Add colorful output
 - [ ] Add interactive mode
 - [ ] Add verbose logging option
+- [ ] Enhance debug output
+  - [ ] Add --debug flag to all commands
+  - [ ] Add --verbose flag for detailed output
+  - [ ] Add log file output option
+  - [ ] Add debug level selection

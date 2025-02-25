@@ -67,4 +67,43 @@ describe('suggest command', () => {
 
     await expect(suggest(options)).rejects.toThrow('Failed to get git diff: Git error')
   })
+
+  it('should enable debug mode when --debug flag is used', async () => {
+    const mockSuggestions = [
+      {
+        id: '1',
+        file: 'README.md',
+        suggestions: ['Update API documentation'],
+        confidence: 0.9,
+      },
+    ]
+
+    vi.mocked(execSync).mockReturnValue(Buffer.from('test diff'))
+    const consoleSpy = vi.spyOn(console, 'log')
+
+    const mockExtractContext = vi
+      .fn()
+      .mockResolvedValue({ changes: [], knowledge: [], confidence: 0.8 })
+    const mockGenerateSuggestions = vi.fn().mockResolvedValue(mockSuggestions)
+
+    vi.mocked(Lexia).mockImplementation(() => {
+      return {
+        extractContext: mockExtractContext,
+        generateSuggestions: mockGenerateSuggestions,
+      } as unknown as Lexia
+    })
+
+    const options = {
+      config: undefined,
+      format: 'markdown' as const,
+      debug: true,
+    }
+
+    await suggest(options)
+
+    expect(consoleSpy).toHaveBeenCalledWith(
+      'Debug: Configuration',
+      expect.objectContaining({ debug: true }),
+    )
+  })
 })

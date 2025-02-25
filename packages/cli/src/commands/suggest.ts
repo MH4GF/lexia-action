@@ -4,6 +4,7 @@ import { Lexia, type LexiaConfig, type Suggestion } from '@lexia/core'
 interface SuggestOptions {
   config?: string
   format?: 'markdown' | 'json'
+  debug?: boolean
 }
 
 export const suggest = async (options: SuggestOptions): Promise<string> => {
@@ -12,10 +13,19 @@ export const suggest = async (options: SuggestOptions): Promise<string> => {
     const config: LexiaConfig = {
       apiKey: process.env['OPENAI_API_KEY'] || '',
       docs: ['README.md'],
+      debug: options.debug || process.env['LEXIA_DEBUG'] === 'true',
     }
 
     if (!config.apiKey) {
       throw new Error('OPENAI_API_KEY is not set')
+    }
+
+    if (config.debug) {
+      console.info('Debug: Configuration', {
+        ...config,
+        apiKey: '***',
+      })
+      console.info('Debug: Git diff length:', diff.length)
     }
 
     const lexia = new Lexia(config)

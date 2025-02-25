@@ -21,14 +21,13 @@ program
   .description('Generate documentation update suggestions')
   .option('-c, --config <path>', 'Path to config file')
   .option('-f, --format <type>', 'Output format (markdown/json)')
+  .option('-d, --debug', 'Enable debug mode')
   .action(async (options) => {
     try {
       const result = await suggest(options)
-      // biome-ignore lint/suspicious/noConsole: This is a CLI output
       console.info(result)
       process.exit(0)
     } catch (error) {
-      // biome-ignore lint/suspicious/noConsole: This is a CLI output
       console.error(error)
       process.exit(1)
     }

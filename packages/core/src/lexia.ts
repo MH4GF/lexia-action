@@ -3,6 +3,7 @@ import { OpenAIClient } from './openai/client.ts'
 export interface LexiaConfig {
   apiKey: string
   docs: string[]
+  debug?: boolean
   extractionConfig?: {
     confidence?: number
     maxResults?: number
@@ -35,7 +36,10 @@ export class Lexia {
   }
 
   extractContext(diff: string): Promise<Context> {
-    const extractionConfig = this.config.extractionConfig || {}
+    const extractionConfig = {
+      ...this.config.extractionConfig,
+      debug: this.config.debug,
+    }
     return this.openaiClient.extractContext(diff, extractionConfig)
   }
 
