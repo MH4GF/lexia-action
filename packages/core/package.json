@@ -21,7 +21,7 @@
     "lint:tsc": "tsc --noEmit"
   },
   "dependencies": {
-    "ai": "^4.1.45",
+    "ai": "^4.1.54",
     "openai": "^4.85.4"
   },
   "devDependencies": {
