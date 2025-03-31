@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "ai": "^4.1.45",
-    "openai": "^4.85.4"
+    "openai": "^4.90.0"
   },
   "devDependencies": {
     "@types/node": "^22.13.5",
