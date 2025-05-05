@@ -13,6 +13,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@mh4gf/configs": "^0.4.5"
+    "@mh4gf/configs": "^0.4.6"
   }
 }
